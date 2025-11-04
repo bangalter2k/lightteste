@@ -147,7 +147,8 @@ body {
   height: auto;
 }
 
-button.prev, button.next {
+button.prev,
+button.next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -155,9 +156,22 @@ button.prev, button.next {
   color: white;
   border: none;
   font-size: 2rem;
-  padding: 0 10px;
+  padding: 10px;
   cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
 }
+
+/* ⬅️ Botão anterior fixo no canto esquerdo */
+button.prev {
+  left: 0;
+}
+
+/* ➡️ Botão próximo fixo no canto direito */
+button.next {
+  right: 0;
+}
+
 
 /* 🛍️ Produtos */
 .mais-vendidos {
