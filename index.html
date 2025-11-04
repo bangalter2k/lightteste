@@ -268,12 +268,20 @@ button.next {
 }
 
 /* ⚠️ Aviso */
-section[style*="background:#fff3cd"] {
-  background: #e0f7f5 !important;
-  border-left: 6px solid #039a95 !important;
+.alert-box {
+  background: #fff3cd;
+  border: 6px solid #ffc107;
+  padding: 20px;
+  margin: 40px auto;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #856404;
+  font-size: 1em;
+  line-height: 1.6;
+  text-align: center; /* centraliza o conteúdo */
 }
 
-/* 💬 Depoimentos */
 /* 💬 Depoimentos */
 .testimonials {
   background: #ffffff;
@@ -455,11 +463,12 @@ footer h3 {
   </div>
 
   <!-- ⚠️ Aviso -->
-  <section style="background:#fff3cd; border-left:6px solid #ffc107; padding:20px; margin:40px auto; max-width:800px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-    <h2 style="margin-top:0; color:#856404;">⚠️ Atenção!</h2>
-    <p>Todos os nossos produtos são <strong>importados</strong> e acompanham <strong>carregador</strong> e <strong>capinha</strong> de brinde.</p>
-    <p>Em caso de <strong>2 meses de atraso</strong>, o aparelho será <strong>bloqueado</strong> temporariamente. Regularize e desbloqueamos. <strong>Fale conosco no WhatsApp!</strong></p>
-  </section>
+<section class="alert-box">
+  <h2>⚠️ Atenção!</h2>
+  <p>Todos os nossos produtos são <strong>importados</strong> e acompanham <strong>carregador</strong> e <strong>capinha</strong> de brinde.</p>
+  <p>Em caso de <strong>2 meses de atraso</strong>, o aparelho será <strong>bloqueado</strong> temporariamente. Regularize e desbloqueamos. <strong>Fale conosco no WhatsApp!</strong></p>
+</section>
+
 
   <!-- 🛍️ Produtos -->
   <section id="produtos" class="mais-vendidos">
