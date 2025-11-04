@@ -88,11 +88,10 @@ body {
 
 
 .hero-nav {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
+  display: flex !important;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 
 .hero-nav a {
@@ -123,7 +122,7 @@ body {
 }
 
 .menu-toggle {
-  display: none;
+  display: none !important;
   font-size: 2em;
   color: #ffffff;
   cursor: pointer;
@@ -261,46 +260,49 @@ section[style*="background:#fff3cd"] {
 }
 
 /* 💬 Depoimentos */
+/* 💬 Depoimentos */
 .testimonials {
   background: #ffffff;
-  padding: 40px 20px;
+  padding: 20px 10px; /* espaço vertical reduzido */
   text-align: center;
 }
 
 .testimonials-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 2 por linha quando possível */
+  gap: 15px; /* espaço entre os cards */
   justify-content: center;
-  gap: 20px;
 }
 
 .testimonial {
   background: #f4f7fb;
-  padding: 20px;
+  padding: 15px;
   border-radius: 8px;
-  width: 300px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .testimonial p {
-  font-size: 0.95em;
+  font-size: 0.9em;
   color: #333;
   line-height: 1.4;
+  margin-bottom: 10px;
 }
 
 .testimonial strong {
   display: block;
-  margin-top: 10px;
+  margin-top: 8px;
   color: #000;
 }
 
 .redonda {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
+
+
 
 /* 📞 Botão WhatsApp flutuante */
 .whatsapp-button {
@@ -370,15 +372,6 @@ footer h3 {
 }
 
 /* 📱 Responsivo */
-@media (max-width: 768px) {
-  .hero-nav {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #027c78;
-    padding: 20px;
-    margin-top: 10px;
-  }
 
   .hero-nav.show {
     display: flex;
@@ -407,72 +400,6 @@ footer h3 {
   .carousel {
     width: 100%;
   }
-
-  footer div {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  footer iframe {
-    width: 100%;
-    height: 200px;
-    margin-top: 20px;
-  }
-}
-/* 📱 Responsivo (continuação) */
-@media (max-width: 768px) {
-  .hero-nav {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #027c78;
-    padding: 20px;
-    margin-top: 10px;
-  }
-
-  .hero-nav.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .hero-btn {
-    display: none;
-  }
-
-  .produtos-container,
-  .testimonials-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .botao-produto-grande,
-  .botao-produto-grande2 {
-    font-size: 1em;
-    padding: 15px 30px;
-  }
-
-  .carousel {
-    width: 100%;
-  }
-
-  footer div {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  footer iframe {
-    width: 100%;
-    height: 200px;
-    margin-top: 20px;
-  }
-}
-
-
 
   </style>
 
@@ -491,8 +418,7 @@ footer h3 {
 
     <a href="https://wa.me/5511979701003" class="hero-btn">Compre Agora</a>
 
-    <div class="menu-toggle" onclick="document.getElementById('heroNav').classList.toggle('show')">
-      ☰
+
     </div>
   </div>
 </header>
