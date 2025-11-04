@@ -1,0 +1,650 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Light Iphones</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <style>
+/* 🌐 Reset e base */
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(to right, #f4f7fb, #ffffff);
+  color: #2c2c2c;
+}
+
+.hero-header {
+  background: #039a95;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+
+  top: 0;
+  z-index: 1000;
+  text-align: center;
+}
+
+.hero-nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.hero-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+  transition: color 0.3s;
+}
+
+.hero-nav a:hover {
+  color: #e0f7f5;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.hero-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.hero-logo img {
+  width: 180px;
+  height: auto;
+}
+
+
+.hero-btn {
+  background-color: #ffffff;
+  color: #039a95;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #e0f7f5;
+}
+
+
+.hero-nav {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.hero-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+  transition: color 0.3s;
+}
+
+.hero-nav a:hover {
+  color: #e0f7f5;
+}
+
+
+.hero-btn {
+  background-color: #ffffff;
+  color: #039a95;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #e0f7f5;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2em;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* 🖼️ Carrossel */
+.carousel {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+  width: 100%;
+  height: auto;
+}
+
+button.prev, button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(3,154,149,0.7);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+/* 🛍️ Produtos */
+.mais-vendidos {
+  background: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.produtos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.produto {
+  width: 300px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(3,154,149,0.1);
+  text-align: center;
+}
+
+.produto img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.produto h3 {
+  margin: 15px 0 10px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #039a95;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #027c78;
+}
+
+/* 🔘 Botões promocionais */
+.botao-produto-grande,
+.botao-produto-grande2 {
+  background-color: #039a95;
+  color: #fff;
+  padding: 25px 60px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.8em;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, background 0.3s ease;
+  animation: pulse 1.8s infinite;
+}
+
+.botao-produto-grande2 {
+  background-color: #fbf53e;
+  color: #039a95;
+  font-size: 1.3em;
+}
+
+.botao-produto-grande:hover {
+  background-color: #027c78;
+  transform: scale(1.05);
+}
+
+.botao-produto-grande2:hover {
+  background-color: #e0f7f5;
+  transform: scale(1.05);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(3,154,149, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(3,154,149, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(3,154,149, 0);
+  }
+}
+
+/* ⚠️ Aviso */
+section[style*="background:#fff3cd"] {
+  background: #e0f7f5 !important;
+  border-left: 6px solid #039a95 !important;
+}
+
+/* 💬 Depoimentos */
+.testimonials {
+  background: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.testimonials-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.testimonial {
+  background: #f4f7fb;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.testimonial p {
+  font-size: 0.95em;
+  color: #333;
+  line-height: 1.4;
+}
+
+.testimonial strong {
+  display: block;
+  margin-top: 10px;
+  color: #000;
+}
+
+.redonda {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* 📞 Botão WhatsApp flutuante */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px; /* ← alterado de right para left */
+  z-index: 999;
+  background-color: #000000;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideIn 0.6s ease-out;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-button img {
+  width: 40px;
+  height: 40px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-button {
+    bottom: 15px;
+    left: 15px;
+    padding: 10px;
+  }
+
+  .whatsapp-button img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+
+/* 📍 Rodapé */
+footer {
+  background: #039a95;
+  color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 60px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
+  font-size: 1em;
+}
+
+footer h3 {
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* 📱 Responsivo */
+@media (max-width: 768px) {
+  .hero-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #027c78;
+    padding: 20px;
+    margin-top: 10px;
+  }
+
+  .hero-nav.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero-btn {
+    display: none;
+  }
+
+  .produtos-container,
+  .testimonials-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .botao-produto-grande,
+  .botao-produto-grande2 {
+    font-size: 1em;
+    padding: 15px 30px;
+  }
+
+  .carousel {
+    width: 100%;
+  }
+
+  footer div {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  footer iframe {
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+  }
+}
+/* 📱 Responsivo (continuação) */
+@media (max-width: 768px) {
+  .hero-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #027c78;
+    padding: 20px;
+    margin-top: 10px;
+  }
+
+  .hero-nav.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero-btn {
+    display: none;
+  }
+
+  .produtos-container,
+  .testimonials-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .botao-produto-grande,
+  .botao-produto-grande2 {
+    font-size: 1em;
+    padding: 15px 30px;
+  }
+
+  .carousel {
+    width: 100%;
+  }
+
+  footer div {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  footer iframe {
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+  }
+}
+
+
+
+  </style>
+
+  <!-- 🔝 Header -->
+<header class="hero-header">
+  <div class="hero-container">
+    <a href="#" class="hero-logo">
+      <img src="logo.png" alt="Light Iphones" />
+    </a>
+
+    <nav class="hero-nav" id="heroNav">
+      <a href="#produtos">Produtos</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="politica-de-privacidade.html">Política de Privacidade</a>
+    </nav>
+
+    <a href="https://wa.me/5511979701003" class="hero-btn">Compre Agora</a>
+
+    <div class="menu-toggle" onclick="document.getElementById('heroNav').classList.toggle('show')">
+      ☰
+    </div>
+  </div>
+</header>
+<br>
+
+  <!-- 🎯 Banner Carrossel -->
+  <section class="carousel">
+    <div class="carousel-images" id="carouselImages">
+      <img src="https://bangalter2k.github.io/FIXO/banner1.png" alt="Banner 1" />
+      <img src="https://bangalter2k.github.io/FIXO/banner2.png" alt="Banner 2" />
+      <img src="https://bangalter2k.github.io/FIXO/banner3.png" alt="Banner 3" />
+    </div>
+    <button class="prev">‹</button>
+    <button class="next">›</button>
+  </section>
+
+  <!-- 🛒 Botão de Compra -->
+  <div style="text-align:center; margin:60px 0;">
+    <a href="https://wa.me/5511979701003" class="botao-produto-grande">🛒 Compre hoje seu iPhone</a>
+  </div>
+
+  <!-- ⚠️ Aviso -->
+  <section style="background:#fff3cd; border-left:6px solid #ffc107; padding:20px; margin:40px auto; max-width:800px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+    <h2 style="margin-top:0; color:#856404;">⚠️ Atenção!</h2>
+    <p>Todos os nossos produtos são <strong>importados</strong> e acompanham <strong>carregador</strong> e <strong>capinha</strong> de brinde.</p>
+    <p>Em caso de <strong>2 meses de atraso</strong>, o aparelho será <strong>bloqueado</strong> temporariamente. Regularize e desbloqueamos. <strong>Fale conosco no WhatsApp!</strong></p>
+  </section>
+
+  <!-- 🛍️ Produtos -->
+  <section id="produtos" class="mais-vendidos">
+    <h2>📱 Produtos Mais Vendidos</h2>
+    <div class="produtos-container">
+      <div class="produto">
+        <img src="https://bangalter2k.github.io/FIXO/iPhone%2013%20Pro%20Max.png" alt="iPhone 13 Pro Max" />
+        <h3>iPhone 13 Pro Max</h3>
+        <a href="https://wa.me/5511979701003" class="btn">CONFIRA</a>
+      </div>
+      <div class="produto">
+        <img src="https://bangalter2k.github.io/FIXO/iPhone%2014.png" alt="iPhone 14" />
+        <h3>iPhone 14</h3>
+        <a href="https://wa.me/5511979701003" class="btn">CONFIRA</a>
+      </div>
+      <div class="produto">
+        <img src="https://bangalter2k.github.io/FIXO/iPhone%2015%20Pro%20Max.png" alt="iPhone 15 Pro Max" />
+        <h3>iPhone 15 Pro Max</h3>
+        <a href="https://wa.me/5511979701003" class="btn">CONFIRA</a>
+      </div>
+    </div>
+  </section>
+
+    <!-- 🛒 Botão de Compra -->
+  <div style="text-align:center; margin:60px 0;">
+    <a href="https://wa.me/5511979701003" class="botao-produto-grande2">🛒 Venha e Confira</a>
+  </div>
+
+  <!-- 💬 Depoimentos -->
+<section id="depoimentos" class="testimonials">
+  <h2>Depoimentos de Clientes</h2>
+  <div class="testimonials-container">
+
+    <div class="testimonial">
+      <img class="redonda" src="https://bangalter2k.github.io/FIXO/ana.jpg" alt="Ana Paula" />
+      <p>"Comprei meu iPhone 13 Pro Max e chegou em apenas 6 dias úteis! O atendimento foi excelente desde o primeiro contato, tiraram todas as minhas dúvidas com paciência e profissionalismo. O aparelho veio lacrado, com capinha e carregador de brinde. Estou muito satisfeita e já indiquei para minha família."</p>
+      <strong>— Ana Paula, São Paulo</strong>
+    </div>
+
+    <div class="testimonial">
+      <img class="redonda" src="https://bangalter2k.github.io/FIXO/João Marcos.jpg" alt="João Marcos" />
+      <p>"Confesso que fiquei com receio no início, mas fui surpreendido positivamente. A equipe da Light Iphones foi super transparente, me enviaram fotos do produto antes do envio e o rastreio funcionou perfeitamente. Recebi meu iPhone 14 em 7 dias e estou muito feliz com a compra. Já estou recomendando para os amigos!"</p>
+      <strong>— João Marcos, Maranhão</strong>
+    </div>
+
+    <div class="testimonial">
+      <img class="redonda" src="https://bangalter2k.github.io/FIXO/Leticia Souza.jpg" alt="Letícia Souza" />
+      <p>"O suporte via WhatsApp foi incrível! Me ajudaram a escolher o modelo ideal para meu uso, explicaram sobre garantia e formas de pagamento. O parcelamento foi fácil e o aparelho chegou bem embalado. Recomendo demais a loja, são muito sérios e comprometidos com o cliente."</p>
+      <strong>— Letícia Souza, Rio de Janeiro</strong>
+    </div>
+
+    <div class="testimonial">
+      <img class="redonda" src="https://bangalter2k.github.io/FIXO/lorena.jpg" alt="Lorena Serra" />
+      <p>"Comprei meu iPhone 16 Pro e chegou pra mim em sete dias após a aprovação. O atendimento foi rápido, direto e muito cordial. A embalagem veio impecável e o aparelho está funcionando perfeitamente. Estou muito satisfeita com a compra e com o cuidado da equipe."</p>
+      <strong>— Lorena Serra, Santa Catarina</strong>
+    </div>
+
+    <div class="testimonial">
+      <img class="redonda" src="https://bangalter2k.github.io/FIXO/Jose de Alencar.jpg" alt="José de Alencar" />
+      <p>"Empresa séria, atendimento excelente e entrega rápida. Recebi meu iPhone 15 com todos os acessórios e ainda ganhei um brinde surpresa. Fiquei muito feliz com a atenção que recebi e com a qualidade do produto. Vou indicá-los sempre que puder."</p>
+      <strong>— José de Alencar, Pernambuco</strong>
+    </div>
+
+    <div class="testimonial">
+      <img class="redonda" src="https://bangalter2k.github.io/FIXO/Nathalia Santos.jpg" alt="Nathália Santos" />
+      <p>"Top top! O atendimento foi 100% do começo ao fim. Me explicaram tudo sobre o processo de importação, garantias e formas de pagamento. O aparelho chegou antes do prazo e ainda veio com capinha e carregador. Que isso, estão de parabéns!!"</p>
+      <strong>— Nathália Santos, Amazonas</strong>
+    </div>
+
+  </div>
+</section>
+
+  <!-- 🛒 Botão de Compra -->
+  <div style="text-align:center; margin:60px 0;">
+    <a href="https://wa.me/5511979701003" class="botao-produto-grande">🛒 Compre hoje seu iPhone</a>
+  </div>
+
+  <!-- 📍 Rodapé com Mapa -->
+  <footer id="contato">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; max-width: 1200px; margin: auto; gap: 30px;">
+      <div style="flex: 1; min-width: 280px;">
+       <h3 style="color: #ffffff;">Light Iphones</h3>
+        <p>📍 Rua Exemplo, 123 - Imperatriz, MA</p>
+        <p>📞 (11) 97970-1003</p>
+        <p>📧 contato@lightiphones.com.br</p>
+        <p>🕒 Seg a Sáb, das 9h às 18h</p>
+        <p style="margin-top: 20px;">&copy; 2025 Light Iphones. Todos os direitos reservados.</p>
+      </div>
+      <div style="flex: 1; min-width: 280px;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.971632122062!2d-47.487!3d-5.526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zLight+Iphones!5e0!3m2!1spt-BR!2sbr!4v1660000000000"
+          width="100%" height="250" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 📞 Botão WhatsApp flutuante -->
+  <a href="https://wa.me/5511979701003" target="_blank" class="whatsapp-button">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
+  </a>
+
+  <!-- 🎬 Script do Carrossel -->
+  <script>
+    let index = 0;
+    const images = document.getElementById('carouselImages');
+    const total = images.children.length;
+
+    function moveSlide(step) {
+      index = (index + step + total) % total;
+      images.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    document.querySelector('.next').onclick = () => moveSlide(1);
+    document.querySelector('.prev').onclick = () => moveSlide(-1);
+    setInterval(() => moveSlide(1), 5000);
+  </script>
+<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #9a031c; color: #fff; padding: 15px; text-align: center; font-size: 0.95em; z-index: 999;">
+  Este site utiliza cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa 
+  <a href="politica-de-privacidade.html" style="color: #fff; text-decoration: underline;">Política de Privacidade</a>.
+  <button onclick="document.getElementById('cookie-banner').style.display='none'" style="margin-left: 15px; background: #fff; color: #039a95; border: none; padding: 8px 12px; border-radius: 5px; font-weight: bold; cursor: pointer;">
+    OK
+  </button>
+</div>
+
+</body>
+</html>
+
